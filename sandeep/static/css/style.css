@@ -2121,16 +2121,32 @@ span.error {
   width:100% !important;
 
 }
+.men-service .men-list li:hover{
+  color: #D63447;
+
+}
+
 .men-service .men-list li a{
   display: inline-block!important; 
 
+} 
+@media (max-width: 767px) {
+  .men-service .men-list li{
+    list-style: none;
+    text-align: justify;
+    
+  }
+  .men-service .men-list li:hover{
+    color: #D63447;
+  
+  }
 }
 
 
-.row .men-service-col {
+/* .row .men-service-col {
   padding-left: -200px !important;
   background-color: green;
-}
+} */
 
 /* .service-3 .men-list li{
   /* background-color: #8cba51; */
@@ -2149,3 +2165,5 @@ span.error {
   display: flex;
   justify-content: center !important;
 } */
+
+
