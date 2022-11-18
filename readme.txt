@@ -1,8 +1,31 @@
-Thank you for using our template!
+# Apertur
 
-For more awesome templates please visit https://colorlib.com/wp/templates/
 
-Copyright information for the template can't be altered/removed unless you purchase a license.
-More information about the license is available here: https://colorlib.com/wp/licence/
+#install env
+#pip install virtualenv
+# create virtual environment
+#python -m venv env-sandeep
 
-Removing copyright information without the license will result in suspension of your hosting and/or domain name(s).
+# activate virtual environment
+#env-sandeep\Scripts\activate
+
+# install libs
+pip freeze > requirements.txt 
+pip install -r requirements.txt
+
+# create django  project
+Django-admin startproject "PROJECTNAME"
+
+# create django app 
+python manage.py startapp "APP NAME"
+
+# create super user 
+python manage.py createsuperuser
+# migration process 
+python manage.py makemigrations 
+
+# run migrations 
+python manage.py migrate 
+
+# Run project or applications
+python manage.py runserver
