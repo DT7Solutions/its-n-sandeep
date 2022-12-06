@@ -6,6 +6,7 @@ body {
   line-height: 30px;
   font-weight: 300;
   position: relative;
+  overflow-x: hidden;
 }
 
 body:before {
@@ -2103,6 +2104,31 @@ span.error {
 /* .men-service{
   background-color: #8cba51 !important;
 } */
+
+.men-service .card{
+ display: flex;
+ justify-content: center !important;
+ align-items: center !important;
+}
+
+.men-service .card .card-body h5{
+  text-align: center;
+}
+.men-service .card img{
+  width: 45px !important;  
+}
+
+.men-service .men-list li{
+  width:100% !important;
+
+}
+.men-service .men-list li:hover{
+  color: #D63447;
+
+}
+
+
+/*
 .men-service h3{
   text-align: center;
   margin-left: 35px !important;
@@ -2140,7 +2166,7 @@ span.error {
     color: #D63447;
   
   }
-}
+} */
 
 
 /* .row .men-service-col {

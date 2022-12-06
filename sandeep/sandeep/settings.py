@@ -129,3 +129,14 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 JAZZMIN_SETTING = JAZZMIN_SETTINGS
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'badugudinesh94@gmail.com'
+EMAIL_HOST_PASSWORD = 'bqudzklawtmskykk'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+# bqudzklawtmskykk
+# GOOGLE_RECAPTCHA_SECRET_KEY ="6Lfgj00jAAAAAOLeYpzo3MpdZSjYr6FDm2y6ZLJ7"

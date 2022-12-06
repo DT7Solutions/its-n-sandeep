@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static  'css/vendor/aos.css' %}">
     <link rel="stylesheet" href="{% static  'css/vendor/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static  'css/vendor/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="sweetalert2.min.css">
     
 
     <!-- Theme Style -->
@@ -82,14 +83,14 @@
               </ul>
             </div>
             <div class="site-logo pos-absolute">
-              <a href="index.html" class="unslate_co--site-logo">It'S Me Sandeep<span>.</span></a>
+              <a href="/" class="unslate_co--site-logo">It'S N Sandeep<span>.</span></a>
             </div>
             <div class="col-md-5 text-right text-lg-left">
               <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
                 <li><a href="#services-section" class="nav-link">Services</a></li>
                 <!-- <li><a href="#skills-section" class="nav-link">Blog</a></li> -->
                 <!-- <li><a href="#testimonial-section" class="nav-link">Testimonial</a></li> -->
-                <li><a href="#journal-section" class="nav-link">Blog</a></li>
+                <!-- <li><a href="#journal-section" class="nav-link">Blog</a></li> -->
                 <li><a href="#contact-section" class="nav-link">Contact</a></li>
               </ul>
 
@@ -188,18 +189,11 @@
       <div class="unslate_co--section">
         <div class="container">
           <div class="owl-carousel logo-slider">
+            {% for brandimg in brand_logo %}
             <div class="logo-v1 gsap-reveal">
-              <img src="{% static 'images/logo-google.png' %}" alt="Image" class="img-fluid">
+              <img src="{{ brandimg.Image }}" alt="Image" class="img-fluid">
             </div>
-            <div class="logo-v1 gsap-reveal">
-              <img src="{% static 'images/logo-puma.png' %}" alt="Image" class="img-fluid">
-            </div>
-            <div class="logo-v1 gsap-reveal">
-              <img src="{% static 'images/logo-paypal.png' %}" alt="Image" class="img-fluid">
-            </div>
-            <div class="logo-v1 gsap-reveal">
-              <img src="{% static 'images/logo-adobe.png' %}" alt="Image" class="img-fluid">
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -234,6 +228,9 @@
         </div>
       </div>
 
+
+      <!--============================== service section  ==================== -->
+
       <div class="unslate_co--section" id="services-section">
         <div class="container" style="background-color: black;">
       
@@ -243,60 +240,68 @@
           </div>
       
           <div class="row gutter-v3">
-            <div class="col-md-6 col-lg-4 mb-4 men-service gsap-reveal-hero" style="margin-right:-80px !important;">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
-                <div class="wrap-icon mb-3">
-                  <img src="{% static 'images/svg/001-options.svg' %}" alt="Image" width="45">
+            <div class="col-sm-12 col-md-4 col-lg-4 gsap-reveal-hero men-service " >
+              <div class="card" style="background:transparent !important;">
+                <img src="{% static 'images/svg/001-options.svg' %}" class="men-img" alt="..." >
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 17px !important;">APPEARANCE MANAGEMENT</h5>
+                  <!-- <h3>APPEARANCE MANAGEMENT</h3> -->
+                  <ul class="men-list">
+                    <li>Image Management</li>
+                    <li>Appearance Make Over</li>
+                    <li>Personal Colours</li>
+                    <li>Wardrobe Management & Clustering</li>
+                    <li>Corporate Dressing</li>
+                    <li>Power Dressing</li>
+                    <li>PGrooming & Hygiene</li>
+                    <li>Personal Assessment & Recommendations</li>
+                  </ul>
                 </div>
-                <h3>APPEARANCE MANAGEMENT</h3>
-                <ul class="men-list">
-                  <li>Image Management</li>
-                  <li>Appearance Make Over</li>
-                  <li>Personal Colours</li>
-                  <li>Wardrobe Management & Clustering</li>
-                  <li>Corporate Dressing</li>
-                  <li>Power Dressing</li>
-                  <li>PGrooming & Hygiene</li>
-                  <li>Personal Assessment & Recommendations</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4 men-service gsap-reveal-hero">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
-                <div class="wrap-icon mb-3">
-                  <img src="{% static 'images/svg/002-chat.svg' %}" alt="Icon" width="45">
                 </div>
-                <h3>AEFFECTIVE COMMUNICATION SKILLS</h3>
-                <ul class="men-list">
-                  <li>Image Management</li>
-                  <li>Appearance Make Over</li>
-                  <li>Personal Colours</li>
-                  <li>Wardrobe Management & Clustering</li>
-                  <li>Corporate Dressing</li>
-                  <li>Power Dressing</li>
-                  <li>PGrooming & Hygiene</li>
-                  <li>Personal Assessment & Recommendations</li>
-                </ul>
               </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4 men-service gsap-reveal-hero">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
-                <div class="wrap-icon mb-3">
-                  <img src="{% static 'images/svg/003-contact-book.svg' %}" alt="Image" class="img-fluid" width="45">
+
+              <div class="col-sm-12 col-md-4 col-lg-4 gsap-reveal-hero men-service">
+                <div class="card" style="background:transparent !important">
+                  <img src="{% static 'images/svg/002-chat.svg' %}" class="men-img" alt="..." >
+                  <div class="card-body">
+                    <!-- <h3>APPEARANCE MANAGEMENT</h3> -->
+                    <h5 class="card-title" style="font-size: 16px !important;">AEFFECTIVE COMMUNICATION SKILLS</h5>
+                    <ul class="men-list">
+                      <li>Image Management</li>
+                      <li>Appearance Make Over</li>
+                      <li>Personal Colours</li>
+                      <li>Wardrobe Management & Clustering</li>
+                      <li>Corporate Dressing</li>
+                      <li>Power Dressing</li>
+                      <li>PGrooming & Hygiene</li>
+                      <li>Personal Assessment & Recommendations</li>
+                    </ul>
+                  </div>
+                  </div>
                 </div>
-                <h3 style="margin-left:-25px !important;">BEHAVIOURAL SKILLS</h3>
-                <ul class="men-list">
-                  <li>Image Management</li>
-                  <li>Appearance Make Over</li>
-                  <li>Personal Colours</li>
-                  <li>Wardrobe Management & Clustering</li>
-                  <li>Corporate Dressing</li>
-                  <li>Power Dressing</li>
-                  <li>PGrooming & Hygiene</li>
-                  <li>Personal Assessment & Recommendations</li>
-                </ul>
-              </div>
+
+                <div class="col-sm-12 col-md-4 col-lg-4 gsap-reveal-hero men-service">
+                  <div class="card" style="background:transparent !important">
+                    <img src="{% static 'images/svg/003-contact-book.svg' %}" class="men-img" alt="..." >
+                    <div class="card-body">
+                      <!-- <h3>BEHAVIOURAL SKILLS</h3> -->
+                      <h5 class="card-title" style="font-size: 17px !important;">BEHAVIOURAL SKILLS</h5>
+                      <ul class="men-list">
+                        <li>Image Management</li>
+                        <li>Appearance Make Over</li>
+                        <li>Personal Colours</li>
+                        <li>Wardrobe Management & Clustering</li>
+                        <li>Corporate Dressing</li>
+                        <li>Power Dressing</li>
+                        <li>PGrooming & Hygiene</li>
+                        <li>Personal Assessment & Recommendations</li>
+                      </ul>
+                    </div>
+                    </div>
+                  </div>
+
             </div>
+
           </div>
         </div>
         <div class="container" style="background-color: black;">
@@ -307,61 +312,67 @@
           </div>
       
           <div class="row gutter-v3">
-            <div class="col-md-6 col-lg-4 mb-4 men-service gsap-reveal-hero" style="margin-right:-80px !important;">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
-                <div class="wrap-icon mb-3">
-                  <img src="{% static 'images/svg/001-options.svg' %}" alt="Image" width="45">
+            <div class="col-sm-12 col-md-4 col-lg-4 gsap-reveal-hero men-service " >
+              <div class="card" style="background:transparent !important;">
+                <img src="{% static 'images/svg/001-options.svg' %}" class="men-img" alt="..." >
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 17px !important;">APPEARANCE MANAGEMENT</h5>
+                  <!-- <h3>APPEARANCE MANAGEMENT</h3> -->
+                  <ul class="men-list">
+                    <li>Image Management</li>
+                    <li>Appearance Make Over</li>
+                    <li>Personal Colours</li>
+                    <li>Wardrobe Management & Clustering</li>
+                    <li>Corporate Dressing</li>
+                    <li>Power Dressing</li>
+                    <li>PGrooming & Hygiene</li>
+                    <li>Personal Assessment & Recommendations</li>
+                  </ul>
                 </div>
-                <h3>APPEARANCE MANAGEMENT</h3>
-                <ul class="men-list">
-                  <li>Image Management</li>
-                  <li>Appearance Make Over</li>
-                  <li>Personal Colours</li>
-                  <li>Wardrobe Management & Clustering</li>
-                  <li>Corporate Dressing</li>
-                  <li>Power Dressing</li>
-                  <li>PGrooming & Hygiene</li>
-                  <li>Personal Assessment & Recommendations</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4 men-service gsap-reveal-hero">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
-                <div class="wrap-icon mb-3">
-                  <img src="{% static 'images/svg/002-chat.svg' %}" alt="Icon" width="45">
                 </div>
-                <h3>AEFFECTIVE COMMUNICATION SKILLS</h3>
-                <ul class="men-list">
-                  <li>Image Management</li>
-                  <li>Appearance Make Over</li>
-                  <li>Personal Colours</li>
-                  <li>Wardrobe Management & Clustering</li>
-                  <li>Corporate Dressing</li>
-                  <li>Power Dressing</li>
-                  <li>PGrooming & Hygiene</li>
-                  <li>Personal Assessment & Recommendations</li>
-                </ul>
               </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4 men-service gsap-reveal-hero">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
-                <div class="wrap-icon mb-3">
-                  <img src="{% static 'images/svg/003-contact-book.svg' %}" alt="Image" class="img-fluid" width="45">
+
+              <div class="col-sm-12 col-md-4 col-lg-4 gsap-reveal-hero men-service">
+                <div class="card" style="background:transparent !important">
+                  <img src="{% static 'images/svg/002-chat.svg' %}" class="men-img" alt="..." >
+                  <div class="card-body">
+                    <!-- <h3>APPEARANCE MANAGEMENT</h3> -->
+                    <h5 class="card-title" style="font-size: 16px !important;">AEFFECTIVE COMMUNICATION SKILLS</h5>
+                    <ul class="men-list">
+                      <li>Image Management</li>
+                      <li>Appearance Make Over</li>
+                      <li>Personal Colours</li>
+                      <li>Wardrobe Management & Clustering</li>
+                      <li>Corporate Dressing</li>
+                      <li>Power Dressing</li>
+                      <li>PGrooming & Hygiene</li>
+                      <li>Personal Assessment & Recommendations</li>
+                    </ul>
+                  </div>
+                  </div>
                 </div>
-                <h3 style="margin-left:-25px !important;">BEHAVIOURAL SKILLS</h3>
-                <ul class="men-list">
-                  <li>Image Management</li>
-                  <li>Appearance Make Over</li>
-                  <li>Personal Colours</li>
-                  <li>Wardrobe Management & Clustering</li>
-                  <li>Corporate Dressing</li>
-                  <li>Power Dressing</li>
-                  <li>PGrooming & Hygiene</li>
-                  <li>Personal Assessment & Recommendations</li>
-                </ul>
-              </div>
+
+                <div class="col-sm-12 col-md-4 col-lg-4 gsap-reveal-hero men-service">
+                  <div class="card" style="background:transparent !important">
+                    <img src="{% static 'images/svg/003-contact-book.svg' %}" class="men-img" alt="..." >
+                    <div class="card-body">
+                      <!-- <h3>BEHAVIOURAL SKILLS</h3> -->
+                      <h5 class="card-title" style="font-size: 17px !important;">BEHAVIOURAL SKILLS</h5>
+                      <ul class="men-list">
+                        <li>Image Management</li>
+                        <li>Appearance Make Over</li>
+                        <li>Personal Colours</li>
+                        <li>Wardrobe Management & Clustering</li>
+                        <li>Corporate Dressing</li>
+                        <li>Power Dressing</li>
+                        <li>PGrooming & Hygiene</li>
+                        <li>Personal Assessment & Recommendations</li>
+                      </ul>
+                    </div>
+                    </div>
+                  </div>
+
             </div>
-          </div>
         </div>
       </div>
 <!--- ending men & women services  -->
@@ -426,63 +437,33 @@
         </div>
 
         <div class="owl-carousel testimonial-slider" data-aos="fade-up">
+          {% for client_review  in ourClients%} 
           <div>
             <div class="testimonial-v1">
               <div class="testimonial-inner-bg">
                 <span class="quote">&ldquo;</span>
                 <blockquote>
-                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                  {{ client_review.Message }}
                 </blockquote>
               </div>
               
               <div class="testimonial-author-info">
-                <img src="{% static 'images/person_man_1.jpg' %}" alt="Image">
-                <h3>Eric Ingram</h3>
-                <span class="d-block position">Product Designer @facebook</span>
+                <img src="{{ client_review.Image }}" alt="Image">
+                <h3>{{ client_review.Name }}</h3>
+                <!-- <span class="d-block position"></span> -->
               </div>
 
             </div>
           </div>
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">&ldquo;</span>
-                <blockquote>
-                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                </blockquote>
-              </div>
-              
-              <div class="testimonial-author-info">
-                <img src="{% static 'images/person_man_2.jpg' %}" alt="Image">
-                <h3>Ryan Mullins</h3>
-                <span class="d-block position">Product Designer @Shopify</span>
-              </div>
-
-            </div>
-          </div>
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">&ldquo;</span>
-                <blockquote>
-                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                </blockquote>
-              </div>
-              
-              <div class="testimonial-author-info">
-                <img src="{% static 'images/person_woman_1.jpg' %}" alt="Image">
-                <h3>Erica Miller</h3>
-                <span class="d-block position">Product Designer @Twitter</span>
-              </div>
-
-            </div>
-          </div>
+          {% endfor %}
+        
+       
         </div>
 
       </div>
       <!-- END testimonial -->
 
-      <div class="unslate_co--section" id="journal-section">
+      <!-- <div class="unslate_co--section" id="journal-section">
         <div class="container">
           <div class="section-heading-wrap text-center mb-5">
             <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Journal Blogs</span></h2>
@@ -556,10 +537,10 @@
               </a>
             </div>
 
-
           </div>
+        </div> -->
 
-        </div>
+
         <!-- <nav aria-label="..."  style="margin-left: 580px !important;">
           <ul class="pagination">
             <li class="page-item disabled">
@@ -575,11 +556,11 @@
             </li>
           </ul>
         </nav> -->
-      </div>
+      <!-- </div> -->
       <!-- END blog posts -->
 
 
-      <div class="unslate_co--section" id="contact-section">
+      <div class="unslate_co--section " id="contact-section" style="margin-bottom:250px !important; background-color:black !important">
         <div class="container">
           <div class="section-heading-wrap text-center mb-5">
             <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Get In Touch</span></h2>
@@ -591,6 +572,7 @@
             
             <div class="col-md-6">
               <form method="post" class="form-outline-style-v1" id="contactForm">
+                {% csrf_token %}
                 <div class="form-group row mb-0">
 
                   <div class="col-lg-6 form-group gsap-reveal">
@@ -606,7 +588,7 @@
                     <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
                   </div>
                 </div>
-                <div class="form-group row gsap-reveal">
+                <div class="form-group row gsap-reveal mb-5">
                     <div class="col-md-12 d-flex align-items-center">
                       <input type="submit" class="btn btn-outline-pill btn-custom-light mr-3" value="Send Message">
                       <span class="submitting"></span>
@@ -643,7 +625,7 @@
       </div>
       </div> <!-- END .unslate_co-site-inner -->
 
-      <footer class="unslate_co--footer unslate_co--section">
+      <footer class="unslate_co--footer unslate_co--section mt-5">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-7">
@@ -664,9 +646,10 @@
                 Copyright &copy;
                 <script>
                   document.write(new Date().getFullYear());
-                </script> All rights reserved | it's me sandeep <i class="icon-heart"
-                  aria-hidden="true"></i> by <a href="#" target="_blank">DT7Solutions</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </script> All rights reserved | it's N sandeep 
+                <!--  <i class="icon-heart"
+                  aria-hidden="true"></i> by <a href="#" target="_blank"></a>
+                  Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               
               </p>
 
@@ -687,6 +670,10 @@
 
     <script src="{% static 'js/scripts-dist.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/contact.js' %}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
 
   </body>
 </html>
