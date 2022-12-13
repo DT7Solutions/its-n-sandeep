@@ -27,7 +27,7 @@ def home(request):
         From:{}
         '''.format(subject,message,email)
         try:
-            send_mail(subject, message,'noreplaybadugudinesh94@gmail.com',recipient_list=['badugudinesh94@gmail.com']) 
+            send_mail(subject, message,'noreplayconnectmagsmen@gmail.com',recipient_list=['connect@magsmen.in']) 
             messages.success(request,sucess)
         except:
             messages.error(request,'your emsil sending fail')
